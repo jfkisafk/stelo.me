@@ -1,5 +1,6 @@
 ---
 import type { SiteMeta } from "@/types";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 import { siteConfig } from "@/site-config";
 
@@ -53,6 +54,8 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 		</>
 	)
 }
+
+<SpeedInsights />
 
 {/* Twitter */}
 <meta content="summary_large_image" property="twitter:card" />

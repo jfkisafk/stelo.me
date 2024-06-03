@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
+import vercel from "@astrojs/vercel/serverless";
 import icon from "astro-icon";
 
 // https://astro.build/config
@@ -16,4 +17,8 @@ export default defineConfig({
 	],
 	// https://docs.astro.build/en/guides/prefetch/
 	prefetch: true,
+	output: "hybrid",
+	adapter: vercel({
+		webAnalytics: { enabled: true },
+	}),
 });
