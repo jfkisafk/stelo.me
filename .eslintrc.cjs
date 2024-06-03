@@ -36,10 +36,7 @@ module.exports = {
 			},
 		},
 		{
-			extends: [
-				"plugin:@typescript-eslint/strict-type-checked",
-				"plugin:@typescript-eslint/stylistic-type-checked",
-			],
+			extends: ["plugin:@typescript-eslint/strict-type-checked", "plugin:@typescript-eslint/stylistic-type-checked"],
 			files: ["*.ts", "*.tsx"],
 		},
 		{
@@ -58,10 +55,7 @@ module.exports = {
 	plugins: ["@typescript-eslint", "astro", "perfectionist", "regexp", "typescript-sort-keys"],
 	root: true,
 	rules: {
-		"@typescript-eslint/no-unused-vars": [
-			"warn",
-			{ ignoreRestSiblings: true, varsIgnorePattern: "Props" },
-		],
+		"@typescript-eslint/no-unused-vars": ["warn", { ignoreRestSiblings: true, varsIgnorePattern: "Props" }],
 		"@typescript-eslint/no-var-requires": "warn",
 	},
 };

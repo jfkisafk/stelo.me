@@ -1,7 +1,7 @@
 {
-	"name": "Astro Theme Cactus Demo",
-	"short_name": "Astro_Cactus",
-	"description": "Starter blog site for Astro",
+	"name": "stelo",
+	"short_name": "stelo",
+	"description": "Portfolio",
 	"icons": [
 		{
 			"src": "/192x192.png",
@@ -15,7 +15,7 @@
 		}
 	],
 	"start_url": "/",
-	"background_color": "#1d1f21",
-	"theme_color": "#2bbc8a",
+	"background_color": "#0F172A",
+	"theme_color": "#2DD4BF",
 	"display": "standalone"
 }

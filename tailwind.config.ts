@@ -4,10 +4,7 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 
 export default {
-	content: [
-		"./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}",
-		"!./src/pages/og-image/[slug].png.ts",
-	],
+	content: ["./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}", "!./src/pages/og-image/[slug].png.ts"],
 	corePlugins: {
 		// disable aspect ratio as per docs -> @tailwindcss/aspect-ratio
 		aspectRatio: false,

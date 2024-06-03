@@ -1,12 +1,7 @@
 ---
 import SocialList from "@/components/SocialList.astro";
-import PostPreview from "@/components/blog/PostPreview.astro";
-import { getAllPosts, sortMDByDate } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
-
-const MAX_POSTS = 10;
-const allPosts = await getAllPosts();
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+import { Icon } from "astro-icon/components";
 
 const cactusTech: { desc: string; href: string; title: string }[] = [
 	{
@@ -15,29 +10,14 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 		title: "Astro",
 	},
 	{
+		desc: "A simple opinionated Astro theme used for this website.",
+		href: "https://astro.build/themes/details/astro-cactus/",
+		title: "Astro Cactus",
+	},
+	{
 		desc: "Rapidly build modern websites without ever leaving your HTML.",
 		href: "https://tailwindcss.com",
 		title: "Tailwind CSS",
-	},
-	{
-		desc: "Simple and easy-to-use markup language.",
-		href: "https://www.markdownguide.org/",
-		title: "Markdown",
-	},
-	{
-		desc: "Markdown for the component era.",
-		href: "https://mdxjs.com/",
-		title: "MDX",
-	},
-	{
-		desc: "Generating png Open Graph images for blog posts.",
-		href: "https://github.com/vercel/satori",
-		title: "Satori",
-	},
-	{
-		desc: "A fully static search library.",
-		href: "https://pagefind.app/",
-		title: "Pagefind",
 	},
 	{
 		desc: "An easy to use Icon component for Astro.",
@@ -45,37 +25,35 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 		title: "Astro Icon",
 	},
 	{
-		desc: "Highly customisable source code & syntax highlighter",
-		href: "https://expressive-code.com/",
-		title: "Expressive Code",
+		desc: "For managing Infrastructure as Code and CI/CD.",
+		href: "https://docs.aws.amazon.com/cdk/v2/guide/cdk_pipeline.html",
+		title: "CDK pipelines",
+	},
+	{
+		desc: "Edge-network hosting this website.",
+		href: "https://aws.amazon.com/cloudfront/",
+		title: "Amazon Cloudfront",
+	},
+	{
+		desc: "Deploy and host this website on an edge-network.",
+		href: "https://vercel.com",
+		title: "Vercel",
 	},
 ];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<h1 class="title mb-6">Hello World!</h1>
-		<p class="mb-4">
-			Hi, I’m a theme for Astro, an example of how you can use this starter to create a personal
-			blog. If you want to know more about how you can customise me, add more posts, and make it
-			your own, click on the github icon link below and it will take you to my repo.
-		</p>
+		<h1 class="title mb-6">
+			<span class="inline-block"><Icon aria-hidden="true" class="h-6 w-6" focusable="false" name={"ph:hand-waving-duotone"} /></span>&nbsp;Hello World!
+		</h1>
+		<p class="mb-4">Hi, I’m Stelo, a full-stack Software Engineer based in Seattle, Washington. This page is a work in progress! In the meantime, you can connect with me on my socials:</p>
 		<SocialList />
 	</section>
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4">
-			{
-				allPostsByDate.map((p) => (
-					<li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
 	<section class="mt-16">
-		<h2 class="title mb-4 text-xl">Technologies</h2>
+		<h2 class="title mb-4 text-xl">
+			<span class="inline-block"><Icon aria-hidden="true" class="h-5 w-5" focusable="false" name={"ph:stack-overflow-logo-duotone"} /></span>&nbsp;Tech Used
+		</h2>
 		<dl class="space-y-4">
 			{
 				cactusTech.map(({ desc, href, title }) => (

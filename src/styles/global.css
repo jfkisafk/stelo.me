@@ -17,11 +17,11 @@
 
 	:root[data-theme="dark"] {
 		color-scheme: dark;
-		--theme-bg: 210deg 6% 12%;
-		--theme-link: 330deg 49% 67%;
-		--theme-text: 220deg 3% 79%;
-		--theme-accent: 159deg 64% 45%;
-		--theme-accent-2: 0deg 0% 93%;
+		--theme-bg: 229deg 73% 4%;
+		--theme-link: 234deg 89% 74%;
+		--theme-text: 208deg 34% 72%;
+		--theme-accent: 172deg 66% 50%;
+		--theme-accent-2: 172deg 66% 50%;
 		--theme-quote: 102deg 100% 86%;
 	}
 
