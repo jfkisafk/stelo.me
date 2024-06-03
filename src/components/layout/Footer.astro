@@ -14,14 +14,16 @@ const year = new Date().getFullYear();
 	</div>
 	<nav aria-label="More on this site" class="flex gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-gray-500">
 		{
-			socialLinks.map(({ friendlyName, link, name }) => (
-				<li class="flex">
-					<a class="px-2 py-2 sm:py-0 sm:hover:text-link" href={link} rel={`noopener noreferrer`} target="_blank">
-						<Icon aria-hidden="true" class="h-4 w-4" focusable="false" name={name} />
-						<span class="sr-only">{friendlyName}</span>
-					</a>
-				</li>
-			))
+			socialLinks
+				.filter((l) => !l.excludeFromFooter)
+				.map(({ friendlyName, link, name }) => (
+					<li class="flex">
+						<a class="px-2 py-2 sm:py-0 sm:hover:text-link" href={link} rel={`noopener noreferrer`} target="_blank">
+							<Icon aria-hidden="true" class="h-4 w-4" focusable="false" name={name} />
+							<span class="sr-only">{friendlyName}</span>
+						</a>
+					</li>
+				))
 		}
 	</nav>
 </footer>

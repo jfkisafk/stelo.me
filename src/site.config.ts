@@ -19,6 +19,10 @@ export const menuLinks: { path: string; title: string }[] = [
 		path: "/",
 		title: "Home",
 	},
+	{
+		path: "https://cdn.stelo.dev/resumes/default.pdf",
+		title: "Resume",
+	},
 ];
 
 /**
@@ -27,6 +31,7 @@ export const menuLinks: { path: string; title: string }[] = [
  Only installed pack is: @iconify-json/mdi
  */
 export const socialLinks: {
+	excludeFromFooter?: boolean;
 	friendlyName: string;
 	link: string;
 	name: string;
@@ -37,23 +42,26 @@ export const socialLinks: {
 		name: "ph:github-logo-duotone",
 	},
 	{
+		excludeFromFooter: true,
 		friendlyName: "Linkedin",
 		link: "https://www.linkedin.com/in/stelo/",
 		name: "ph:linkedin-logo-duotone",
 	},
 	{
+		excludeFromFooter: true,
 		friendlyName: "Mastodon",
 		link: "https://c.im/@stelo",
 		name: "ph:mastodon-logo-duotone",
 	},
 	{
-		friendlyName: "Twitter",
-		link: "https://twitter.com/indoorkite",
-		name: "ph:x-logo-duotone",
-	},
-	{
 		friendlyName: "Mail",
 		link: "mailto:contact@stelo.dev",
 		name: "ph:envelope-duotone",
+	},
+	{
+		excludeFromFooter: true,
+		friendlyName: "Resume",
+		link: "https://cdn.stelo.dev/resumes/default.pdf",
+		name: "ph:read-cv-logo-duotone",
 	},
 ];
