@@ -17,7 +17,7 @@ export default defineConfig({
 	],
 	// https://docs.astro.build/en/guides/prefetch/
 	prefetch: true,
-	output: "hybrid",
+	output: "server",
 	adapter: vercel({
 		webAnalytics: { enabled: true },
 	}),

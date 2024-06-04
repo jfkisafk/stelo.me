@@ -13,7 +13,7 @@ const { articleDate, description, ogImage, title } = Astro.props;
 const titleSeparator = "•";
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url).href;
+const socialImageURL = "https://cdn.stelo.dev/sites/main/social-card.png";
 ---
 
 <meta charset="utf-8" />
@@ -25,7 +25,7 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <link href="https://cdn.stelo.dev/sites/main/favicon.ico" rel="icon" sizes="any" />
 <link href="https://cdn.stelo.dev/sites/main/icon.svg" rel="icon" type="image/svg+xml" />
 <link href="https://cdn.stelo.dev/sites/main/apple-touch-icon.png" rel="apple-touch-icon" />
-<link href="/manifest.webmanifest" rel="manifest" />
+<link href="https://cdn.stelo.dev/sites/main/manifest.webmanifest" rel="manifest" />
 <link href={canonicalURL} rel="canonical" />
 
 {/* Primary Meta Tags */}

@@ -3,6 +3,9 @@ import SocialList from "@/components/SocialList.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { Icon } from "astro-icon/components";
 
+const ip = Astro.request.headers.get("x-real-ip");
+const city = decodeURIComponent(Astro.request.headers.get("x-vercel-ip-city"));
+
 const cactusTech: { desc: string; href: string; title: string }[] = [
 	{
 		desc: "Build fast websites, faster.",
@@ -35,7 +38,7 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 		title: "Amazon Cloudfront",
 	},
 	{
-		desc: "Deploy and host this website on an edge-network.",
+		desc: `Deploys the website on edge being retrieved by ${ip} in ${city}.`,
 		href: "https://vercel.com",
 		title: "Vercel",
 	},
