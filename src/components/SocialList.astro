@@ -1,6 +1,46 @@
 ---
 import { Icon } from "astro-icon/components";
-import { socialLinks } from "@/site-config";
+
+/**
+ Uses https://www.astroicon.dev/getting-started/
+ Find icons via guide: https://www.astroicon.dev/guides/customization/#open-source-icon-sets
+ Only installed pack is: @iconify-json/mdi
+ */
+const socialLinks: {
+	excludeFromFooter?: boolean;
+	friendlyName: string;
+	link: string;
+	name: string;
+}[] = [
+	{
+		friendlyName: "Github",
+		link: "https://github.com/jfkisafk",
+		name: "ph:github-logo-duotone",
+	},
+	{
+		excludeFromFooter: true,
+		friendlyName: "Linkedin",
+		link: "https://www.linkedin.com/in/stelo/",
+		name: "ph:linkedin-logo-duotone",
+	},
+	{
+		excludeFromFooter: true,
+		friendlyName: "Mastodon",
+		link: "https://c.im/@stelo",
+		name: "ph:mastodon-logo-duotone",
+	},
+	{
+		friendlyName: "Mail",
+		link: "mailto:contact@stelo.dev",
+		name: "ph:envelope-duotone",
+	},
+	{
+		excludeFromFooter: true,
+		friendlyName: "Resume",
+		link: "https://cdn.stelo.dev/resumes/default.pdf",
+		name: "ph:read-cv-logo-duotone",
+	},
+];
 ---
 
 <div class="flex flex-wrap items-end gap-x-2">

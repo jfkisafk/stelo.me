@@ -1,5 +1,5 @@
 ---
-import { siteConfig, socialLinks } from "@/site-config";
+import { siteConfig } from "@/site-config";
 import { Icon } from "astro-icon/components";
 
 const year = new Date().getFullYear();
@@ -13,17 +13,9 @@ const year = new Date().getFullYear();
 		{year}&nbsp;<span class="inline-block"><Icon aria-hidden="true" class="h-4 w-4" focusable="false" name={"ph:rocket-launch-duotone"} /></span>
 	</div>
 	<nav aria-label="More on this site" class="flex gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-gray-500">
-		{
-			socialLinks
-				.filter((l) => !l.excludeFromFooter)
-				.map(({ friendlyName, link, name }) => (
-					<li class="flex">
-						<a class="px-2 py-2 sm:py-0 sm:hover:text-link" href={link} rel={`noopener noreferrer`} target="_blank">
-							<Icon aria-hidden="true" class="h-4 w-4" focusable="false" name={name} />
-							<span class="sr-only">{friendlyName}</span>
-						</a>
-					</li>
-				))
-		}
+		<a class="px-2 py-2 sm:py-0 sm:hover:text-link" href="https://github.com/jfkisafk/stelo.me" rel={`noopener noreferrer`} target="_blank">
+			<Icon aria-hidden="true" class="h-4 w-4" focusable="false" name="ph:gitlab-logo-duotone" />
+			<span class="sr-only">GitHub</span>
+		</a>
 	</nav>
 </footer>
