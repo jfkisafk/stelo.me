@@ -5,8 +5,8 @@ import { Icon } from "astro-icon/components";
 
 const id = Astro.request.headers.get("x-vercel-id");
 const timezone = Astro.request.headers.get("x-vercel-ip-timezone");
-const hour = new Date().toLocaleString('en-US', { hour: 'numeric', hour12: false, timezone });
-const greeting = hour >= '05' && hour < '12' ? 'Bonjour' : hour >= '12' && hour < '21' ? 'Bonsoir' : 'Bonne nuit';
+const hour = new Date().toLocaleString("en-US", { hour: "numeric", hour12: false, timezone });
+const greeting = hour >= "05" && hour < "12" ? "Bonjour" : hour >= "12" && hour < "21" ? "Bonsoir" : "Bonne nuit";
 
 const cactusTech: { desc: string; href: string; title: string }[] = [
 	{
