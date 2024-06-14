@@ -3,8 +3,10 @@ import SocialList from "@/components/SocialList.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { Icon } from "astro-icon/components";
 
-const ip = Astro.request.headers.get("x-real-ip");
-const city = decodeURIComponent(Astro.request.headers.get("x-vercel-ip-city"));
+const id = Astro.request.headers.get("x-vercel-id");
+const timezone = Astro.request.headers.get("x-vercel-ip-timezone");
+const hour = new Date().toLocaleString('en-US', { hour: 'numeric', hour12: false, timezone });
+const greeting = hour >= '05' && hour < '12' ? 'Bonjour' : hour >= '12' && hour < '21' ? 'Bonsoir' : 'Bonne nuit';
 
 const cactusTech: { desc: string; href: string; title: string }[] = [
 	{
@@ -38,7 +40,7 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 		title: "Amazon Cloudfront",
 	},
 	{
-		desc: `Deploys the website on edge being retrieved by ${ip} in ${city}.`,
+		desc: `Deploys the website on edge in ${id}.`,
 		href: "https://vercel.com",
 		title: "Vercel",
 	},
@@ -48,7 +50,7 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 <PageLayout meta={{ title: "Home" }}>
 	<section>
 		<h1 class="title mb-6">
-			<span class="inline-block"><Icon aria-hidden="true" class="h-6 w-6" focusable="false" name={"ph:hand-waving-duotone"} /></span>&nbsp;Bonjour!
+			<span class="inline-block"><Icon aria-hidden="true" class="h-6 w-6" focusable="false" name={"ph:hand-waving-duotone"} /></span>&nbsp;${greeting}!
 		</h1>
 		<p class="mb-4">
 			Hi, I’m Stelo, a full-stack Software Engineer based in Seattle, Washington. I'm passionate about shaping the future through Distributed Computing, Large-scale System Designs, Microservices and
